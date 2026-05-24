@@ -16,6 +16,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".TaskListActivity" android:exported="false" />
+
         <!-- 1-6: standard -->
         <activity android:name=".TestActivity1" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:def" />
         <activity android:name=".TestActivity2" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:custom" android:taskAffinity="com.example.task1" />
