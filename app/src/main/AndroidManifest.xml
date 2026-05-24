@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.multitaskdemo">
+
+    <application
+        android:allowBackup="true"
+        android:label="MultiTaskDemo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 1-6: standard -->
+        <activity android:name=".TestActivity1" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:def" />
+        <activity android:name=".TestActivity2" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:custom" android:taskAffinity="com.example.task1" />
+        <activity android:name=".TestActivity3" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:intoExisting AF:def" android:documentLaunchMode="intoExisting" />
+        <activity android:name=".TestActivity4" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:intoExisting AF:custom" android:documentLaunchMode="intoExisting" android:taskAffinity="com.example.task2" />
+        <activity android:name=".TestActivity5" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:always AF:def" android:documentLaunchMode="always" />
+        <activity android:name=".TestActivity6" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:always AF:custom" android:documentLaunchMode="always" android:taskAffinity="com.example.task3" />
+
+        <!-- 7-12: singleTop -->
+        <activity android:name=".TestActivity7" android:launchMode="singleTop" android:exported="true" android:label="LM:singleTop DLM:none AF:def" />
+        <activity android:name=".TestActivity8" android:launchMode="singleTop" android:exported="true" android:label="LM:singleTop DLM:none AF:custom" android:taskAffinity="com.example.task4" />
+        <activity android:name=".TestActivity9" android:launchMode="singleTop" android:exported="true" android:label="LM:singleTop DLM:intoExisting AF:def" android:documentLaunchMode="intoExisting" />
+        <activity android:name=".TestActivity10" android:launchMode="singleTop" android:exported="true" android:label="LM:singleTop DLM:intoExisting AF:custom" android:documentLaunchMode="intoExisting" android:taskAffinity="com.example.task5" />
+        <activity android:name=".TestActivity11" android:launchMode="singleTop" android:exported="true" android:label="LM:singleTop DLM:always AF:def" android:documentLaunchMode="always" />
+        <activity android:name=".TestActivity12" android:launchMode="singleTop" android:exported="true" android:label="LM:singleTop DLM:always AF:custom" android:documentLaunchMode="always" android:taskAffinity="com.example.task6" />
+
+        <!-- 13-18: singleTask -->
+        <activity android:name=".TestActivity13" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:none AF:def" />
+        <activity android:name=".TestActivity14" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:none AF:custom" android:taskAffinity="com.example.task7" />
+        <activity android:name=".TestActivity15" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:intoExisting AF:def" android:documentLaunchMode="intoExisting" />
+        <activity android:name=".TestActivity16" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:intoExisting AF:custom" android:documentLaunchMode="intoExisting" android:taskAffinity="com.example.task8" />
+        <activity android:name=".TestActivity17" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:always AF:def" android:documentLaunchMode="always" />
+        <activity android:name=".TestActivity18" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:always AF:custom" android:documentLaunchMode="always" android:taskAffinity="com.example.task9" />
+
+        <!-- 19-24: singleInstance -->
+        <activity android:name=".TestActivity19" android:launchMode="singleInstance" android:exported="true" android:label="LM:singleInstance DLM:none AF:def" />
+        <activity android:name=".TestActivity20" android:launchMode="singleInstance" android:exported="true" android:label="LM:singleInstance DLM:none AF:custom" android:taskAffinity="com.example.task10" />
+        <activity android:name=".TestActivity21" android:launchMode="singleInstance" android:exported="true" android:label="LM:singleInstance DLM:intoExisting AF:def" android:documentLaunchMode="intoExisting" />
+        <activity android:name=".TestActivity22" android:launchMode="singleInstance" android:exported="true" android:label="LM:singleInstance DLM:intoExisting AF:custom" android:documentLaunchMode="intoExisting" android:taskAffinity="com.example.task11" />
+        <activity android:name=".TestActivity23" android:launchMode="singleInstance" android:exported="true" android:label="LM:singleInstance DLM:always AF:def" android:documentLaunchMode="always" />
+        <activity android:name=".TestActivity24" android:launchMode="singleInstance" android:exported="true" android:label="LM:singleInstance DLM:always AF:custom" android:documentLaunchMode="always" android:taskAffinity="com.example.task12" />
+
+        <!-- 25-30: singleInstancePerTask (Android 12+) -->
+        <activity android:name=".TestActivity25" android:launchMode="singleInstancePerTask" android:exported="true" android:label="LM:siPerTask DLM:none AF:def" />
+        <activity android:name=".TestActivity26" android:launchMode="singleInstancePerTask" android:exported="true" android:label="LM:siPerTask DLM:none AF:custom" android:taskAffinity="com.example.task13" />
+        <activity android:name=".TestActivity27" android:launchMode="singleInstancePerTask" android:exported="true" android:label="LM:siPerTask DLM:intoExisting AF:def" android:documentLaunchMode="intoExisting" />
+        <activity android:name=".TestActivity28" android:launchMode="singleInstancePerTask" android:exported="true" android:label="LM:siPerTask DLM:intoExisting AF:custom" android:documentLaunchMode="intoExisting" android:taskAffinity="com.example.task14" />
+        <activity android:name=".TestActivity29" android:launchMode="singleInstancePerTask" android:exported="true" android:label="LM:siPerTask DLM:always AF:def" android:documentLaunchMode="always" />
+        <activity android:name=".TestActivity30" android:launchMode="singleInstancePerTask" android:exported="true" android:label="LM:siPerTask DLM:always AF:custom" android:documentLaunchMode="always" android:taskAffinity="com.example.task15" />
+
+        <!-- 31-36: Additional variations -->
+        <activity android:name=".TestActivity31" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:def (ExcludeFromRecents)" android:excludeFromRecents="true" />
+        <activity android:name=".TestActivity32" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:def (MaxRecents=1)" android:maxRecents="1" />
+        <activity android:name=".TestActivity33" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:def (AutoRemoveFromRecents)" android:autoRemoveFromRecents="true" />
+        <activity android:name=".TestActivity34" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:def (RelinquishTaskIdentity)" android:relinquishTaskIdentity="true" />
+        <activity android:name=".TestActivity35" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:custom (NoHistory)" android:noHistory="true" android:taskAffinity="com.example.task16" />
+        <activity android:name=".TestActivity36" android:launchMode="standard" android:exported="true" android:label="LM:standard DLM:none AF:custom (FinishOnTaskLaunch)" android:finishOnTaskLaunch="true" android:taskAffinity="com.example.task17" />
+
+    </application>
+
+</manifest>
