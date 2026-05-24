@@ -82,19 +82,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(root)
     }
 
-    private fun launchActivity(className: String, index: Int) {
-        val intent = Intent().apply {
-            setClassName(this@MainActivity, className)
-            putExtra("title", "Instance $index")
-            
-            var flags = 0
-            if (cbNewTask.isChecked) flags = flags or Intent.FLAG_ACTIVITY_NEW_TASK
-            if (cbMultipleTask.isChecked) flags = flags or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
-            if (cbNewDocument.isChecked) flags = flags or Intent.FLAG_ACTIVITY_NEW_DOCUMENT
-            if (cbRetainInRecents.isChecked) flags = flags or Intent.FLAG_ACTIVITY_RETAIN_IN_RECENTS
-            
-            addFlags(flags)
-        }
-        startActivity(intent)
+    private var documentIdCounter = 0
+
+private fun launchActivity(className: String, index: Int) {
+    val intent = Intent().apply {
+        setClassName(this@MainActivity, className)
+        putExtra("title", "Instance $index")
+
+        // 为文档模式生成唯一 data URI，确保每次都是新文档
+        val docId = documentIdCounter++
+        data = android.net.Uri.parse("content://com.example.multitaskdemo.document/$docId")
+
+        var flags = 0
+        if (cbNewTask.isChecked) flags = flags or Intent.FLAG_ACTIVITY_NEW_TASK
+        if (cbMultipleTask.isChecked) flags = flags or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
+        if (cbNewDocument.isChecked) flags = flags or Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+        if (cbRetainInRecents.isChecked) flags = flags or Intent.FLAG_ACTIVITY_RETAIN_IN_RECENTS
+
+        addFlags(flags)
     }
+    startActivity(intent)
+}
 }
