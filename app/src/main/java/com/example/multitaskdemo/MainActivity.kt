@@ -35,6 +35,15 @@ class MainActivity : AppCompatActivity() {
         }
         root.addView(header)
 
+        val btnShowTasks = Button(this).apply {
+            text = "Show My Tasks"
+            setOnClickListener {
+                startActivity(Intent(this@MainActivity, TaskListActivity::class.java))
+            }
+        }
+        root.addView(btnShowTasks, 0)
+
+
         cbNewTask = CheckBox(this).apply { text = "FLAG_ACTIVITY_NEW_TASK" }
         cbMultipleTask = CheckBox(this).apply { text = "FLAG_ACTIVITY_MULTIPLE_TASK" }
         cbNewDocument = CheckBox(this).apply { text = "FLAG_ACTIVITY_NEW_DOCUMENT" }
