@@ -35,8 +35,8 @@
         <activity android:name=".TestActivity12" android:launchMode="singleTop" android:exported="true" android:label="LM:singleTop DLM:always AF:custom" android:documentLaunchMode="always" android:taskAffinity="com.example.task6" />
 
         <!-- 13-18: singleTask -->
-        <activity android:name=".TestActivity13" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:none AF:def" />
-        <activity android:name=".TestActivity14" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:none AF:custom" android:taskAffinity="com.example.task7" />
+        <activity android:name=".TestActivity13" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:none AF:def" android:process=":mini_program_01" />
+        <activity android:name=".TestActivity14" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:none AF:custom" android:taskAffinity="com.example.task7" android:process=":mini_program_02" />
         <activity android:name=".TestActivity15" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:intoExisting AF:def" android:documentLaunchMode="intoExisting" />
         <activity android:name=".TestActivity16" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:intoExisting AF:custom" android:documentLaunchMode="intoExisting" android:taskAffinity="com.example.task8" />
         <activity android:name=".TestActivity17" android:launchMode="singleTask" android:exported="true" android:label="LM:singleTask DLM:always AF:def" android:documentLaunchMode="always" />
