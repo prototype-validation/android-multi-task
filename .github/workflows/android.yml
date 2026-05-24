@@ -24,6 +24,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew || true
 
+    # 在构建前降级 Gradle Wrapper 到兼容版本
+    - name: Downgrade Gradle wrapper to 8.4
+      run: ./gradlew wrapper --gradle-version=8.4
+
+
     - name: Build with Gradle
       run: |
         if [ -f gradlew ]; then
