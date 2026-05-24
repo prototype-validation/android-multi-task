@@ -30,12 +30,13 @@ open class TestActivity : AppCompatActivity() {
 val r = java.util.Random()
 val color = Color.argb(255, r.nextInt(256), r.nextInt(256), r.nextInt(256))
 val label = "Task #${taskId}"
-val icon = resources.getDrawable(android.R.drawable.ic_dialog_info, theme) // 随便用一个
 
+// 直接传入资源 ID
+val iconResId = android.R.drawable.ic_dialog_info
 val taskDesc = ActivityManager.TaskDescription.Builder()
     .setLabel(label)
     .setPrimaryColor(color)
-    .setIcon(icon)
+    .setIcon(iconResId)   // 这里改为 Int 类型
     .build()
 setTaskDescription(taskDesc)
     }
